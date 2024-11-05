@@ -1,0 +1,9 @@
+<div class="dice-container">
+  <app-dice
+    *ngFor="let value of diceValues; index as i"
+    [value]="value"
+    [isLocked]="diceLocks[i]"
+    (toggleLock)="toggleLock(i)">
+  </app-dice>
+</div>
+<button (click)="rollDice()" [disabled]="rollsLeft === 0">Lanzar dados</button>
